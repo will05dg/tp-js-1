@@ -1,3 +1,5 @@
+//de hexadecimal a rgb
+
 function hexavalue(caracter){
     if (caracter == "0") {
         return 0;
@@ -48,6 +50,8 @@ function hexavalue(caracter){
         return 15;
     }
 }
+
+// de rgb a exadecimal
 
 function numerovalue(numeros){
     if (numeros == 0) {
@@ -124,24 +128,29 @@ if (opcion == 1) {
 }
 
 if (opcion == 2) {
-    // exadecimal
+    // de rgb a exadecimal
 
-    let  r = parseInt (prompt('ingrese un color R'));
-    let  g = parseInt (prompt('ingrese un color G'));
-    let  b = parseInt (prompt('ingrese un color B'));
-
-    console.log(r);
-    console.log(g);
-    console.log(b);
-
-    console.log(parseInt(r/16))
-    let hexR= numerovalue (parseInt(r/16))  + numerovalue (r%16);
-    let hexG= numerovalue (parseInt(g/16))  + numerovalue (g%16);
-    let hexB= numerovalue (parseInt(b/16))  + numerovalue (b%16);
+    let  r = parseInt (prompt('ingrese un color R de 0 a 255'));
+    let  g = parseInt (prompt('ingrese un color G de 0 a 255'));
+    let  b = parseInt (prompt('ingrese un color B de 0 a 255'));
 
 
-    alert(`el numero RGB: ${r} ${g} ${b} es en # ${hexR}${hexG}${hexB}`);
-}
+    if (0 > r || r > 255 || 0 > g || g > 255 || 0 > b || b > 255) {
+        alert ('`el numero RGB no es corecto')
+    } else {
+        console.log(r);
+        console.log(g);
+        console.log(b);
+    
+        console.log(parseInt(r/16))
+        let hexR= numerovalue (parseInt(r/16))  + numerovalue (r%16);
+        let hexG= numerovalue (parseInt(g/16))  + numerovalue (g%16);
+        let hexB= numerovalue (parseInt(b/16))  + numerovalue (b%16);
+    
+    
+        alert(`el numero RGB: ${r} ${g} ${b} es en # ${hexR}${hexG}${hexB}`);
+    }
+} 
 
 
 
