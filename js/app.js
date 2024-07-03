@@ -112,19 +112,24 @@ if (opcion == 1) {
 
     let  hexadecimal = prompt('ingrese un color hexadecimal').toUpperCase()
 
-    conv=""
+    if (hexadecimal.length != 6) {
+        alert ('el numero hexadecimal no es corecto')
+    } else {
+        conv=""
 
-    for (let i = 0 ; i < 3 ; i++) {
-        rgb = hexavalue (hexadecimal[2*i])*16 + hexavalue (hexadecimal[2*i+1]);
-        
-        if (i<2){
-            conv=conv+rgb+","
-        } else {
-            conv=conv+rgb
+        for (let i = 0 ; i < 3 ; i++) {
+            rgb = hexavalue (hexadecimal[2*i])*16 + hexavalue (hexadecimal[2*i+1]);
+            
+            if (i<2){
+                conv=conv+rgb+","
+            } else {
+                conv=conv+rgb
+            }
         }
+    
+        alert(`el numero hexadecimal # ${hexadecimal} es en rgb: ${conv}`);
     }
-
-    alert(`el numero hexadecimal # ${hexadecimal} es en rgb: ${conv}`);
+    
 }
 
 if (opcion == 2) {
